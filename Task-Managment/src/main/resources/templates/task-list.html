@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Task List</h1>
+
+    <form th:action="@{/tasks}" method="get" class="filters">
+        <!-- Priority Filter -->
+        <select name="priority">
+            <option value="">Priority Filter</option>
+            <option value="HIGH" th:selected="${selectedPriority == 'HIGH'}">HIGH</option>
+            <option value="MEDIUM" th:selected="${selectedPriority == 'MEDIUM'}">MEDIUM</option>
+            <option value="LOW" th:selected="${selectedPriority == 'LOW'}">LOW</option>
+        </select>
+
+        <!-- Status Filter -->
+        <select name="status">
+            <option value="">All Statuses</option>
+            <option th:each="stat : ${statuses}"
+                    th:value="${stat}"
+                    th:text="${stat}"
+                    th:selected="${selectedStatus == stat}">
+            </option>
+        </select>
+
+        <!-- Subject Filter -->
+        <select name="subject">
+            <option value="">All Subjects</option>
+            <option th:each="subj : ${subjects}"
+                    th:value="${subj}"
+                    th:text="${subj}"
+                    th:selected="${selectedSubject == subj}">
+            </option>
+        </select>
+
+
+        <button type="submit">Apply Filters</button>
+        <a th:href="@{/tasks}" class="btn btn-secondary">Reset Filters</a>
+    </form>
+    </div>
+
+    <table class="task-table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subject</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}"></td>
+            <td th:text="${task.subject}"></td>
+            <td th:text="${task.status}"></td>
+            <td th:text="${task.taskText}"></td>
+            <td th:text="${#temporals.format(task.startDate, 'dd-MM-yyyy')}"></td>
+            <td th:text="${#temporals.format(task.endDate, 'dd-MM-yyyy')}"></td>
+            <td th:text="${task.priority}"></td>
+            <td>
+                <a th:href="@{/tasks/edit/{id}(id=${task.id})}" class="button button-edit">Edit</a>
+                <form th:action="@{/tasks/complete/{id}(id=${task.id})}" method="post" style="display: inline;">
+                    <button type="submit" class="button button-complete">Complete</button>
+                </form>
+                <form th:action="@{/tasks/delete/{id}(id=${task.id})}" method="post" style="display: inline;">
+                    <button type="submit" class="button button-delete">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/tasks/new}" class="button">Create New Task</a>
+</div>
+</body>
+</html>

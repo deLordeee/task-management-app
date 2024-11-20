@@ -1,0 +1,116 @@
+.task-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+
+.task-table th, .task-table td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+
+.task-table th { background-color: #f4f4f4; }
+
+.button { padding: 8px 16px; margin: 4px; border: none; border-radius: 4px; cursor: pointer; }
+
+.button-complete { background-color: #4CAF50; color: white; }
+
+.button-delete { background-color: #f44336; color: white; }
+
+.form-container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+
+.form-group { margin-bottom: 15px; }
+input[type="datetime-local"] { padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%; box-sizing: border-box; }
+
+input[type="datetime-local"]:focus { outline: none; border-color: #4CAF50; box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); }
+/* Modern form styling */ .form-container { max-width: 800px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+
+.form-group { margin-bottom: 24px; }
+
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; font-size: 14px; }
+
+.form-control { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; transition: all 0.3s ease; }
+
+.form-control:focus { border-color: #4CAF50; box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); outline: none; }
+
+select.form-control { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; }
+
+textarea.form-control { min-height: 120px; resize: vertical; }
+
+.button-group { display: flex; gap: 12px; margin-top: 32px; }
+
+.button { padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+
+.button-complete { background-color: #4CAF50; color: white; }
+
+.button-complete:hover { background-color: #45a049; transform: translateY(-1px); }
+
+.button-delete { background-color: #f44336; color: white; }
+
+.button-delete:hover { background-color: #da190b; transform: translateY(-1px); }
+
+/* Date input styling */ input[type="datetime-local"] { padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; width: 100%; font-size: 14px; }
+
+/* Form title styling */ h1 { color: #333; margin-bottom: 32px; font-size: 28px; text-align: center; }
+
+.button-edit {
+    background-color: #FFD700;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.button-edit:hover {
+    background-color: #FFC400;
+    transform: translateY(-1px);
+}
+.filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.filters select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 150px;
+}
+
+.filters select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.filters select, .filters input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.filters button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    padding: 5px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
